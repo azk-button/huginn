@@ -8,16 +8,17 @@ systems({
   //////////
   /// production version
   //////////
-  "huginn-prod": {
+  "huginn": {
     depends: ["mysql"],
     image: {"docker": "azukiapp/ruby:2.1"},
     provision: [
       "[ -e .env ] || cp .env.example .env",
       "bundle install --path /azk/bundler --without development test",
+      "sed 's,{{APP_SECRET_TOKEN}},'$(bundle exec rake secret)',g' -i .env",
       "bundle exec rake db:create",
       "bundle exec rake db:migrate",
       "bundle exec rake db:seed",
-      "bundle exec rake assets:precompile"
+      "bundle exec rake assets:precompile",
     ],
     workdir: "/azk/#{manifest.dir}",
     shell: "/bin/bash",
@@ -52,7 +53,7 @@ systems({
   },
 
   "huginn-worker": {
-    extends: "huginn-prod",
+    extends: "huginn",
     scalable: { default: 1, limit: 1 },
     http: null,
     ports: null,
@@ -88,10 +89,9 @@ systems({
   /// development version
   //////////
   "huginn-dev": {
-    extends: "huginn-prod",
+    extends: "huginn",
     depends: ['mysql'],
     provision: [
-      "[ -e .env ] || cp .env.example .env",
       "bundle install --path /azk/bundler",
       "bundle exec rake db:create",
       "bundle exec rake db:migrate",
@@ -148,7 +148,7 @@ systems({
       BOX_SIZE: '2gb',
 
       GIT_CHECKOUT_COMMIT_BRANCH_TAG: 'azkfile',
-      AZK_RESTART_COMMAND: 'azk restart huginn-worker -Rvv && azk restart huginn-prod -Rvv',
+      AZK_RESTART_COMMAND: 'azk restart huginn-worker -Rvv && azk restart huginn -Rvv',
       RUN_SETUP: 'true',
       RUN_CONFIGURE: 'true',
       RUN_DEPLOY: 'true',
@@ -159,7 +159,7 @@ systems({
     envs: {
       BOX_SIZE: '2gb',
       GIT_CHECKOUT_COMMIT_BRANCH_TAG: 'azkfile',
-      AZK_RESTART_COMMAND: 'azk restart huginn-worker -Rvv && azk restart huginn-prod -Rvv',
+      AZK_RESTART_COMMAND: 'azk restart huginn-worker -Rvv && azk restart huginn -Rvv',
       RUN_SETUP: 'false',
       RUN_CONFIGURE: 'false',
       RUN_DEPLOY: 'true',
