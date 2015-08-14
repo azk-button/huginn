@@ -26,13 +26,21 @@ systems({
     command: "bundle exec rails server -p $HTTP_PORT -P /tmp/ruby.pid -b 0.0.0.0",
     wait: {retry: 60, timeout: 1000},
     mounts: {
+      // mount and sync all to container
       "/azk/#{manifest.dir}": sync("."),
+
+      // share this too, because sync ignores that because of .gitignore
+      "/azk/#{manifest.dir}/.bundle": path("#{manifest.dir}/.bundle"),
+
+      // some persistent folders
+      // will be stored on host and shared on container
+      // use azk info to see where is stored
+      // $ azk info
       "/azk/bundler": persistent("#{manifest.dir}/bundler"),
       "/azk/#{manifest.dir}/tmp": persistent("#{manifest.dir}/tmp"),
       "/azk/#{manifest.dir}/public": persistent("#{manifest.dir}/public"),
       "/azk/#{manifest.dir}/vendor/bundle": persistent("#{manifest.dir}/vendor/bundle"),
       "/azk/#{manifest.dir}/log": persistent("#{manifest.dir}/log"),
-      "/azk/#{manifest.dir}/.bundle": persistent("#{manifest.dir}/.bundle"),
     },
     scalable: {"default": 1},
     http: {
