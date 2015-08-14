@@ -29,8 +29,10 @@ systems({
       "/azk/#{manifest.dir}": sync("."),
       "/azk/bundler": persistent("#{manifest.dir}/bundler"),
       "/azk/#{manifest.dir}/tmp": persistent("#{manifest.dir}/tmp"),
-      "/azk/#{manifest.dir}/log": path("#{manifest.dir}/log"),
-      "/azk/#{manifest.dir}/.bundle": path("#{manifest.dir}/.bundle"),
+      "/azk/#{manifest.dir}/public": persistent("#{manifest.dir}/public"),
+      "/azk/#{manifest.dir}/vendor/bundle": persistent("#{manifest.dir}/vendor/bundle"),
+      "/azk/#{manifest.dir}/log": persistent("#{manifest.dir}/log"),
+      "/azk/#{manifest.dir}/.bundle": persistent("#{manifest.dir}/.bundle"),
     },
     scalable: {"default": 1},
     http: {
