@@ -12,6 +12,7 @@ systems({
     depends: ["mysql"],
     image: {"docker": "azukiapp/ruby:2.1"},
     provision: [
+      "[ -e .env ] || cp .env.example .env",
       "bundle install --path /azk/bundler --without development test",
       "bundle exec rake db:create",
       "bundle exec rake db:migrate",
@@ -90,6 +91,7 @@ systems({
     extends: "huginn-prod",
     depends: ['mysql'],
     provision: [
+      "[ -e .env ] || cp .env.example .env",
       "bundle install --path /azk/bundler",
       "bundle exec rake db:create",
       "bundle exec rake db:migrate",
