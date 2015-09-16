@@ -53,34 +53,15 @@ And now, some example screenshots.  Below them are instructions to get you start
 
 ## Getting Started
 
+<<<<<<< 70453f33208bdd527f4974dabffedad242de7281
 ### Docker
 
 The quickest and easiest way to check out Huginn is to use the offical Docker image. Have a look at the [documentation](./doc/docker/install.md).
 
 ### Local Installation
-
-If you just want to play around, you can simply fork this repository, then perform the following steps:
-
-* Run `git remote add upstream https://github.com/cantino/huginn.git` to add the main repository as a remote for your fork.
-* Copy `.env.example` to `.env` (`cp .env.example .env`) and edit `.env`, at least updating the `APP_SECRET_TOKEN` variable.
-* Run `bundle` to install dependencies
-* Run `bundle exec rake db:create`, `bundle exec rake db:migrate`, and then `bundle exec rake db:seed` to create a development MySQL database with some example Agents.
-* Run `bundle exec foreman start`, visit [http://localhost:3000/][localhost], and login with the username of `admin` and the password of `password`.
-* Setup some Agents!
-* Read the [wiki][wiki] for usage examples and to get started making new Agents.
-* Periodically run `git fetch upstream` and then `git checkout master && git merge upstream/master` to merge in the newest version of Huginn.
-
-Note: By default, emails are intercepted in the `development` Rails environment, which is what you just setup.  You can view 
-them at [http://localhost:3000/letter_opener](http://localhost:3000/letter_opener). If you'd like to send real emails via SMTP when playing 
-with Huginn locally, set `SEND_EMAIL_IN_DEVELOPMENT` to `true` in your `.env` file.
-
-If you need more detailed instructions, see the [Novice setup guide][novice-setup-guide].
-
-[localhost]: http://localhost:3000/
-[wiki]: https://github.com/cantino/huginn/wiki
-[novice-setup-guide]: https://github.com/cantino/huginn/wiki/Novice-setup-guide
-
+=======
 ### Running locally
+>>>>>>> Adding `Run Project` button and deployment instructions to README.md
 
 Click the button bellow to quickly and safely install this project on your local machine.
 
@@ -98,14 +79,11 @@ All agents have specs! Test all specs with `bundle exec rspec`, or test a specif
 
 ## Deployment
 
+<<<<<<< 70453f33208bdd527f4974dabffedad242de7281
 ### Heroku
 
 Try Huginn on Heroku: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy) (Takes a few minutes to setup. Read the [documentation](./doc/heroku/install.md) while you are waiting and be sure to click 'View it' after launch!)
-
-Huginn works on the free version of Heroku [with significant limitations](https://github.com/cantino/huginn/blob/master/doc/heroku/install.md). For non-experimental use, we strongly recommend Heroku's cheapest paid plan or our Docker container.
-
-Please see [the Huginn Wiki](https://github.com/cantino/huginn/wiki#deploying-huginn) for detailed deployment strategies for different providers.
-
+=======
 ### Deploying to DigitalOcean
 
 After you run this project locally using [`Run Project` button](#running-locally), deploying to [DigitalOcean](http://digitalocean.com/) is very simple.
@@ -128,6 +106,15 @@ $ azk shell deploy
 The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
 
 Find further instructions on how to deploy to DigitalOcean using `azk` [here](http://docs.azk.io/en/deploy/README.html).
+
+### Deploying to Heroku
+
+Try Huginn on Heroku: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy) (Takes a few minutes to setup.  Be sure to click 'View it' after launch!)
+>>>>>>> Adding `Run Project` button and deployment instructions to README.md
+
+Huginn works on the free version of Heroku [with significant limitations](https://github.com/cantino/huginn/blob/master/doc/heroku/install.md). For non-experimental use, we strongly recommend Heroku's cheapest paid plan or our Docker container.
+
+Please see [the Huginn Wiki](https://github.com/cantino/huginn/wiki#deploying-huginn) for detailed deployment strategies for different providers.
 
 ### Manual installation on any server
 

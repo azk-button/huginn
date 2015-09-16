@@ -80,17 +80,9 @@ If you need more detailed instructions, see the [Novice setup guide][novice-setu
 [wiki]: https://github.com/cantino/huginn/wiki
 [novice-setup-guide]: https://github.com/cantino/huginn/wiki/Novice-setup-guide
 
-### Running locally
+#### Running with azk
 
-Click the button bellow to quickly and safely install this project on your local machine.
-
-[![Run project](https://s3-sa-east-1.amazonaws.com/assets.azk.io/azk-button.png)](http://run-stage.azk.io/start/?repo=azk-button/huginn&ref=azkfile)
-
-The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
-
-Learn more about `azk` [here](Azkfile.md).
-
-Read the [wiki][wiki] for usage examples and to get started making new Agents.
+Check [Azkfile.md](./Azkfile.md) for more info.
 
 ### Develop
 
@@ -105,29 +97,6 @@ Try Huginn on Heroku: [![Deploy](https://www.herokucdn.com/deploy/button.png)](h
 Huginn works on the free version of Heroku [with significant limitations](https://github.com/cantino/huginn/blob/master/doc/heroku/install.md). For non-experimental use, we strongly recommend Heroku's cheapest paid plan or our Docker container.
 
 Please see [the Huginn Wiki](https://github.com/cantino/huginn/wiki#deploying-huginn) for detailed deployment strategies for different providers.
-
-### Deploying to DigitalOcean
-
-After you run this project locally using [`Run Project` button](#running-locally), deploying to [DigitalOcean](http://digitalocean.com/) is very simple.
-
-First, be sure you have SSH keys configured in your machine. If you don't have it yet (or if you aren't sure about it), just follow steps 1 and 2 of [this tutorial](https://help.github.com/articles/generating-ssh-keys/).
-
-Next, put your [personal access token](https://cloud.digitalocean.com/settings/applications) into a `.env` file:
-
-```bash
-$ cd path/to/the/project
-$ echo "DEPLOY_API_TOKEN=<YOUR-PERSONAL-ACCESS-TOKEN>" >> .env
-```
-
-Then, just run the following:
-
-```bash
-$ azk shell deploy
-```
-
-The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
-
-Find further instructions on how to deploy to DigitalOcean using `azk` [here](http://docs.azk.io/en/deploy/README.html).
 
 ### Manual installation on any server
 
