@@ -75,6 +75,12 @@ azk shell deploy
 
 --------------------
 
+## How to run
+
+Configuring OAuth applications before you can use services on Huginn. Edit your `.env` file in your root folder. More info at https://github.com/cantino/huginn/wiki/Configuring-OAuth-applications
+
+--------------------
+
 ### Other azk commands
 
 #### stop all containers
