@@ -84,7 +84,7 @@ If you need more detailed instructions, see the [Novice setup guide][novice-setu
 
 Click the button bellow to quickly and safely install this project on your local machine.
 
-[![Run project](https://s3-sa-east-1.amazonaws.com/assets.azk.io/azk-button.png)](http://run-stage.azk.io/start/?repo=azk-button/huginn&ref=azkfile)
+[![Run project](https://s3-sa-east-1.amazonaws.com/assets.azk.io/run-project.png)](http://run.azk.io/start/?repo=azk-button/huginn&ref=azkfile)
 
 The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
 
