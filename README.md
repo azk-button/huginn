@@ -73,7 +73,7 @@ Read the [wiki][wiki] for usage examples and to get started making new Agents.
 
 > As you may have noticed, this is a fork from the original project. Click here to learn more: https://github.com/run-project/gallery#run-project-button---gallery
 
-> We only forked the original project to add the `Run Project` button as an option for local installation (see [section above](#running-locally)). We strongly recommend you to give it a try. ;)
+> We only forked the original project to add the [`Run Project` button](#running-locally) as an option for local installation (see section above). We strongly recommend you to give it a try. ;)
 
 If you just want to play around, you can simply fork this repository, then perform the following steps:
 
