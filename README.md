@@ -57,7 +57,23 @@ And now, some example screenshots.  Below them are instructions to get you start
 
 The quickest and easiest way to check out Huginn is to use the offical Docker image. Have a look at the [documentation](./doc/docker/install.md).
 
+### Running locally
+
+Click the button bellow to quickly and safely install this project on your local machine.
+
+[![Run project](https://s3-sa-east-1.amazonaws.com/assets.azk.io/run-project.png)](http://run.azk.io/start/?repo=azk-button/huginn&ref=azkfile)
+
+The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
+
+Learn more about `azk` [here](Azkfile.md).
+
+Read the [wiki][wiki] for usage examples and to get started making new Agents.
+
 ### Local Installation
+
+> As you may have noticed, this is a fork from the original project. Click here to learn more: https://github.com/run-project/gallery#run-project-button---gallery
+
+> We only forked the original project to add the `Run Project` button as an option for local installation (see [section above](#running-locally)). We strongly recommend you to give it a try. ;)
 
 If you just want to play around, you can simply fork this repository, then perform the following steps:
 
@@ -80,31 +96,11 @@ If you need more detailed instructions, see the [Novice setup guide][novice-setu
 [wiki]: https://github.com/cantino/huginn/wiki
 [novice-setup-guide]: https://github.com/cantino/huginn/wiki/Novice-setup-guide
 
-### Running locally
-
-Click the button bellow to quickly and safely install this project on your local machine.
-
-[![Run project](https://s3-sa-east-1.amazonaws.com/assets.azk.io/run-project.png)](http://run.azk.io/start/?repo=azk-button/huginn&ref=azkfile)
-
-The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
-
-Learn more about `azk` [here](Azkfile.md).
-
-Read the [wiki][wiki] for usage examples and to get started making new Agents.
-
 ### Develop
 
 All agents have specs! Test all specs with `bundle exec rspec`, or test a specific spec with `bundle exec rspec path/to/specific/spec.rb`. Read more about rspec for rails [here](https://github.com/rspec/rspec-rails).
 
 ## Deployment
-
-### Heroku
-
-Try Huginn on Heroku: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy) (Takes a few minutes to setup. Read the [documentation](./doc/heroku/install.md) while you are waiting and be sure to click 'View it' after launch!)
-
-Huginn works on the free version of Heroku [with significant limitations](https://github.com/cantino/huginn/blob/master/doc/heroku/install.md). For non-experimental use, we strongly recommend Heroku's cheapest paid plan or our Docker container.
-
-Please see [the Huginn Wiki](https://github.com/cantino/huginn/wiki#deploying-huginn) for detailed deployment strategies for different providers.
 
 ### Deploying to DigitalOcean
 
@@ -128,6 +124,14 @@ $ azk shell deploy
 The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
 
 Find further instructions on how to deploy to DigitalOcean using `azk` [here](http://docs.azk.io/en/deploy/README.html).
+
+### Deploying to Heroku
+
+Try Huginn on Heroku: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy) (Takes a few minutes to setup. Read the [documentation](./doc/heroku/install.md) while you are waiting and be sure to click 'View it' after launch!)
+
+Huginn works on the free version of Heroku [with significant limitations](https://github.com/cantino/huginn/blob/master/doc/heroku/install.md). For non-experimental use, we strongly recommend Heroku's cheapest paid plan or our Docker container.
+
+Please see [the Huginn Wiki](https://github.com/cantino/huginn/wiki#deploying-huginn) for detailed deployment strategies for different providers.
 
 ### Manual installation on any server
 
