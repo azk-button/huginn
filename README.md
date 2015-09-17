@@ -65,7 +65,7 @@ Click the button bellow to quickly and safely install this project on your local
 
 The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
 
-Learn more about `azk` [here](Azkfile.md).
+Learn more about `azk` [here](http://azk.io).
 
 Read the [wiki][wiki] for usage examples and to get started making new Agents.
 
