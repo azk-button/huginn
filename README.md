@@ -118,7 +118,7 @@ $ echo "DEPLOY_API_TOKEN=<YOUR-PERSONAL-ACCESS-TOKEN>" >> .env
 Then, just run the following:
 
 ```bash
-$ azk shell deploy
+$ azk deploy
 ```
 
 The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
