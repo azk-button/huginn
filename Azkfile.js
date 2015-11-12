@@ -6,7 +6,7 @@ systems({
   // production version
   'huginn': {
     depends: ['mysql'],
-    image: { docker: 'azukiapp/ruby:2.1' },
+    image: { docker: 'azukiapp/ruby:2.2' },
     provision: [
       '[ -e .env ] || cp .env.example .env',
       'bundle install --path /azk/bundler --without development test',
