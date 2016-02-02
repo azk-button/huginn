@@ -21,7 +21,7 @@ describe AgentsController do
   describe "POST handle_details_post" do
     it "passes control to handle_details_post on the agent" do
       sign_in users(:bob)
-      post :handle_details_post, :id => agents(:bob_manual_event_agent).to_param, :payload => { :foo => "bar" }
+      post :handle_details_post, :id => agents(:bob_manual_event_agent).to_param, :payload => { :foo => "bar" }.to_json
       expect(JSON.parse(response.body)).to eq({ "success" => true })
       expect(agents(:bob_manual_event_agent).events.last.payload).to eq({ 'foo' => "bar" })
     end
@@ -29,7 +29,7 @@ describe AgentsController do
     it "can only be accessed by the Agent's owner" do
       sign_in users(:jane)
       expect {
-        post :handle_details_post, :id => agents(:bob_manual_event_agent).to_param, :payload => { :foo => :bar }
+        post :handle_details_post, :id => agents(:bob_manual_event_agent).to_param, :payload => { :foo => :bar }.to_json
       }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
@@ -397,6 +397,8 @@ describe AgentsController do
     it "accepts an event" do
       sign_in users(:bob)
       agent = agents(:bob_website_agent)
+      agent.options['url_from_event'] = '{{ url }}'
+      agent.save!
       url_from_event = "http://xkcd.com/?from_event=1".freeze
       expect {
         post :dry_run, id: agent, event: { url: url_from_event }
