@@ -141,7 +141,7 @@ systems({
       // https://github.com/azukiapp/docker-deploy-digitalocean/blob/master/README.md
       GIT_REF: 'master',
       BOX_SIZE: '2gb',
-      AZK_RESTART_COMMAND: 'azk restart huginn-worker -Rvv && azk restart huginn -Rvv',
+      AZK_RESTART_COMMAND: 'azk restart -Rvv',
     }
   },
 
